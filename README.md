@@ -1,17 +1,12 @@
-# log_user
+# Home
 
-Simple command to log when a given user is active on the machine. I use this to measure how many hours I spend on my machine at work.
+Baseline for my linux home directory. Includes:
+- [zshrc](https://github.com/robbyrussell/oh-my-zsh) config
+- script to log my computer usage
 
-### Install:
-- Clone this repo
-- Run `make`
 
-### Uninstall:
-- Run `make clean`
-
-### Usage with cron:
+Don't forget to:
 
 ```
-$ crontab -e
-0 * * * * log_user --user=yourusername
+cd ; rm -rf .git
 ```
