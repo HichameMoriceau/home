@@ -8,8 +8,7 @@
 ### Install:
 
 ```
-
-git clone https://github.com/HichameMoriceau/home.git \
-	cp -rf home/. . \
-	rm -rf .git README.md home
+git clone git@github.com:HichameMoriceau/home.git \
+	&& cp -rf home/. . \
+	&& rm -rf .git README.md home
 ```
