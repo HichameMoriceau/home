@@ -100,5 +100,5 @@ alias open="xdg-open"
 
 export PATH="${PATH}:/home/${USER}/bin"
 
-# PS1 prompt starting with username
-PROMPT="$fg[cyan]%}$USER ${PROMPT}"
+# PS1 prompt starting with username@host (useful when navigating remote machines)
+PROMPT='%(!.%{%F{yellow}%}.)$USER@%{$fg[white]%}%M %{$fg_bold[red]%}➜ %{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%}% %{$reset_color%}'
