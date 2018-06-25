@@ -11,9 +11,23 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+" ----------------------------
+" Add more Vundle plugins here:
+" ----------------------------
+
+" youcompleteme was installed manually, not using Vundle:
 " Plugin 'valloric/youcompleteme'
 
-" sudo apt install vim-nox vim-gtk vim-gnome vim-athena # neocomplete dependencies
+" theme/colours
+" https://github.com/NLKNguyen/papercolor-theme
+Plugin 'NLKNguyen/papercolor-theme'
+
+" Proper tagbar:
+" https://github.com/itchyny/lightline.vim
+Plugin 'itchyny/lightline.vim'
+
+" git integration for vim :Git
+Plugin 'tpope/vim-fugitive'
 
 
 " All of your Plugins must be added before the following line
@@ -39,6 +53,36 @@ autocmd FileType vim let b:vcm_tab_complete = 'vim'
 :set tabstop=2
 " Highlight search results
 :set hlsearch
+
+" Theme:
+" set term=screen-256color
+" colorscheme github
+
+
+if !has('gui_running')
+				  set t_Co=256
+	endif
+set background=light
+colorscheme PaperColor
+
+" display the lightline tag bar
+set laststatus=2
+" stop showing the current mode (already in tagbar)
+set noshowmode
+" define lightline tagbar appearance (can be more sofisticated)
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+			\ 'active': {
+			\ 	'left':[
+			\ 			['mode', 'paste'],
+			\  			['gitbranch', 'readonly', 'filename','modified']
+			\ 		]
+			\  },
+			\ 'component_function': {
+			\ 		'gitbranch': 'fugitive#head'
+			\ 	}
+      \ }
+
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 " Jump over blocks of text (does not work)
