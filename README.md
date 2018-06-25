@@ -2,7 +2,9 @@
 
 ### Baseline for my linux home directory. Includes:
 - [zshrc](https://github.com/robbyrussell/oh-my-zsh) config
-- script to log my computer usage
+- [tmux](https://gist.github.com/henrik/1967800) config
+- vim config
+- Bash scripts
 
 
 ### Install:
