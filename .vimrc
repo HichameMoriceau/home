@@ -54,7 +54,9 @@ autocmd FileType vim let b:vcm_tab_complete = 'vim'
 " Highlight search results
 :set hlsearch
 
-" Theme:
+
+
+" Theme ---------------------------------------------------------
 " set term=screen-256color
 " colorscheme github
 
@@ -82,6 +84,21 @@ let g:lightline = {
 			\ 		'gitbranch': 'fugitive#head'
 			\ 	}
       \ }
+
+" end of theme config ---------------------------------------------
+
+" highlight text that goes beyong 80 columns
+"augroup collumnLimit
+"  autocmd!
+"  autocmd BufEnter,WinEnter
+"        \ highlight CollumnLimit ctermbg=DarkGrey guibg=DarkGrey
+"  let collumnLimit = 10 " feel free to customize
+"  let pattern =
+"        \ '\%<' . (collumnLimit+1) . 'v.\%>' . collumnLimit . 'v'
+"  autocmd BufEnter,WinEnter
+"        \ let w:m1=matchadd('CollumnLimit', pattern, -1)
+"augroup END
+:match ErrorMsg '\%>80v.\+'
 
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 nnoremap <silent> <C-l> :nohl<CR><C-l>
