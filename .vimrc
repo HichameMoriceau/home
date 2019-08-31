@@ -20,7 +20,7 @@ set ruler
 set undolevels=1000
 set backspace=indent,eol,start	
 
-" Faster scroll
+" 3 times faster scroll
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
