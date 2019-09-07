@@ -31,3 +31,12 @@ alias tls="tmux ls"
 # Terminal prompt appearance
 # Example: "13:13:31 ~ >"
 export PS1="\[\e[0;36m\]\t \[\e[0;36m\]\W \[\e[0;37m\]> \[\e[0m\]"
+
+
+# Base16 Shell: https://github.com/chriskempson/base16-shell
+BASE16_SHELL="$HOME/.config/base16-shell/"
+[ -n "$PS1" ] && \
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+        eval "$("$BASE16_SHELL/profile_helper.sh")"
+# Then run:
+# $ base16_nord 
